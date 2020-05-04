@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{loginController.login()}</from-action>
+			<from-outcome>sucess</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>contactoList.xhtml</display-name>
+		<from-view-id>/contactoList.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{contactoBean.nuevo()}</from-action>
+			<from-outcome>sucess</from-outcome>
+			<to-view-id>/contacto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>contacto.xhtml</display-name>
+		<from-view-id>/contacto.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{contactoBean.guardar}</from-action>
+			<from-outcome>sucess</from-outcome>
+			<to-view-id>/contactoList.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>contactoList.xhtml</display-name>
+		<from-view-id>/contactoList.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{contactoBean.editar(contacto)}</from-action>
+			<from-outcome>sucess</from-outcome>
+			<to-view-id>/contacto.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>contacto.xhtml</display-name>
+		<from-view-id>/contacto.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{contactoBean.actualizar}</from-action>
+			<from-outcome>sucess</from-outcome>
+			<to-view-id>/contactoList.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>contactoList.xhtml</display-name>
+		<from-view-id>/contactoList.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{contactoBean.eliminar(contacto)}</from-action>
+			<from-outcome>sucess</from-outcome>
+			<to-view-id>/contactoList.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+</faces-config>
